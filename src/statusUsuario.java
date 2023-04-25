@@ -1,3 +1,3 @@
-public enum StatusUsuario {
+public enum statusUsuario {
     ATIVO, INATIVO, BLOQUEADO;
 }
