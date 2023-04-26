@@ -10,6 +10,7 @@ public class Usuario {
     private String status;
     private statusUsuario StatusUsu;
 
+
     public int getCodigo() {
         return codigo;
     }
@@ -66,15 +67,15 @@ public class Usuario {
         this.status = status;
     }
 
-    public Usuario(String senha){
+    public Usuario(){
         this.senha = "etec#123";
         this.primAcesso = true;
         StatusUsu = statusUsuario.ATIVO;
     }
 
-    void setSenha(String senha, boolean primAcesso, statusUsuario statusUsu) {
-        this.senha = getSenha();
-        this.primAcesso = false;
+    void senha(String senha) {
+        this.senha = senha;
+        primAcesso = false;
         StatusUsu = statusUsuario.INATIVO;
     }
 
@@ -87,7 +88,7 @@ public class Usuario {
     void exib(){
         System.out.println("Código:" + codigo);
         System.out.println("Usuário:" + nome);
-        System.out.println("Senha" + senha);
+        System.out.println("Senha: " + senha);
         System.out.println("Trocar senha:" + primAcesso);
         System.out.println("Status:" + StatusUsu);
     }
