@@ -92,5 +92,22 @@ public class Usuario {
         System.out.println("Trocar senha:" + primAcesso);
         System.out.println("Status:" + StatusUsu);
     }
+    void autenticar(String senha){
+        if (StatusUsu == statusUsuario.INATIVO || StatusUsu == statusUsuario.BLOQUEADO) {
+            System.out.println("Acesso negado!");
+        }
+        if (tentAcesso >= 3) {
+            StatusUsu = statusUsuario.BLOQUEADO;
+            System.out.println("Acesso Negado");
+        }
+        if (this.senha == senha) {
+            tentAcesso = 0;
+            System.out.println("Acesso Liberado");
+        }
+        else{
+            tentAcesso = tentAcesso + 1;
+            System.out.println("Usuário/senha inválidos");
+        }
+    }
 }
 

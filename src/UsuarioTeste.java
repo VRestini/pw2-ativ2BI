@@ -4,7 +4,7 @@ public class UsuarioTeste {
         usuario01.setNome("Vitor");
         usuario01.setCodigo(01);
         usuario01.senha("aaaa");
-
+        usuario01.autenticar("aad");
         usuario01.exib();
 
     }
