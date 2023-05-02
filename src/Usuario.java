@@ -10,6 +10,7 @@ public class Usuario {
     private String status;
     private statusUsuario StatusUsu;
 
+
     public int getCodigo() {
         return codigo;
     }
@@ -72,11 +73,18 @@ public class Usuario {
         StatusUsu = statusUsuario.ATIVO;
     }
 
+<<<<<<< HEAD
     public void setSenha(String senha) {
         this.senha = senha;
         this.primAcesso = false;
         this.StatusUsu = statusUsuario.ATIVO;
         this.tentAcesso = 0;
+=======
+    void senha(String senha) {
+        this.senha = senha;
+        primAcesso = false;
+        StatusUsu = statusUsuario.INATIVO;
+>>>>>>> a9426c76131cddefd32a361f7b64c09917a72c69
     }
 
     void inativ() {
@@ -90,6 +98,23 @@ public class Usuario {
         System.out.println("Senha: " + senha);
         System.out.println("Trocar senha:" + primAcesso);
         System.out.println("Status:" + StatusUsu);
+    }
+    void autenticar(String senha){
+        if (StatusUsu == statusUsuario.INATIVO || StatusUsu == statusUsuario.BLOQUEADO) {
+            System.out.println("Acesso negado!");
+        }
+        if (tentAcesso >= 3) {
+            StatusUsu = statusUsuario.BLOQUEADO;
+            System.out.println("Acesso Negado");
+        }
+        if (this.senha == senha) {
+            tentAcesso = 0;
+            System.out.println("Acesso Liberado");
+        }
+        else{
+            tentAcesso = tentAcesso + 1;
+            System.out.println("Usuário/senha inválidos");
+        }
     }
 }
 
