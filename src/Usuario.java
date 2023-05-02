@@ -30,7 +30,7 @@ public class Usuario {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void getSenha(String senha) {
         this.senha = senha;
     }
 
@@ -66,28 +66,28 @@ public class Usuario {
         this.status = status;
     }
 
-    public Usuario(String senha){
+    public Usuario(){
         this.senha = "etec#123";
         this.primAcesso = true;
         StatusUsu = statusUsuario.ATIVO;
     }
 
-    void setSenha(String senha, boolean primAcesso, statusUsuario statusUsu) {
-        this.senha = getSenha();
+    public void setSenha(String senha) {
+        this.senha = senha;
         this.primAcesso = false;
-        StatusUsu = statusUsuario.INATIVO;
+        this.StatusUsu = statusUsuario.ATIVO;
+        this.tentAcesso = 0;
     }
 
-    public Usuario( LocalDate dataInativou) {
-        this.dataInativo = dataInativo;
-        if (dataInativo == LocalDate.now());
-            StatusUsu = statusUsuario.INATIVO;
-            this.primAcesso = false;
+    void inativ() {
+        LocalDate.now();
+        StatusUsu = statusUsuario.INATIVO;
+        this.primAcesso = false;
     }
     void exib(){
         System.out.println("Código:" + codigo);
         System.out.println("Usuário:" + nome);
-        System.out.println("Senha" + senha);
+        System.out.println("Senha: " + senha);
         System.out.println("Trocar senha:" + primAcesso);
         System.out.println("Status:" + StatusUsu);
     }
